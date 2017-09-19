@@ -7,12 +7,13 @@ using System.Threading.Tasks;
 
 namespace ForthDemo_v1.PageObjects.HeaderObject
 {
-    public class SearchBar:HeaderPart
+    public class HeaderPartForDelete : HeaderPart
     {
         private string baseSearchBarCssSelector = ".nav-search-field ";
 
-        public SearchBar(IWebDriver drv) : base(drv)
+        public HeaderPartForDelete(IWebDriver drv):base(drv)
         {
+                
         }
 
         InputField InputField => new InputField(drv, baseSearchBarCssSelector);

@@ -1,13 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using OpenQA.Selenium;
+
 
 namespace ForthDemo_v1.PageObjects.HeaderObject
 {
      public abstract class HeaderPart
     {
-        
+        protected IWebDriver drv;
+
+        public HeaderPart(IWebDriver drv)
+        {
+            this.drv = drv;
+        }
     }
 }

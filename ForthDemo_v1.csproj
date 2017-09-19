@@ -60,6 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BasePages\BaseAmazonPage.cs" />
+    <Compile Include="PageObjects\HeaderObject\HeaderPartForDelete.cs" />
     <Compile Include="PageObjects\HeaderObject\Header.cs" />
     <Compile Include="PageObjects\HeaderObject\HeaderPart.cs" />
     <Compile Include="PageObjects\HeaderObject\SearchBar.cs" />

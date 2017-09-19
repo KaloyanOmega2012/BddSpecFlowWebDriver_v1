@@ -9,7 +9,8 @@ using System.Threading.Tasks;
 namespace ForthDemo_v1.Pages
 {
     //base page that hold high level common code for a webPage
-    public abstract class BasePage<TPage> where TPage : BasePage<TPage>
+    public abstract class BasePage<TPage>
+        where TPage : BasePage<TPage>
     {
         protected  IWebDriver drv;
 
@@ -20,7 +21,7 @@ namespace ForthDemo_v1.Pages
 
         public void NavigateTo()
         {
-            TPage page = (TPage)Activator.CreateInstance(typeof(TPage),drv);
+            TPage page = (TPage)Activator.CreateInstance(typeof(TPage), drv);
             drv.Url = page.PageUrl;
         }
 

@@ -14,12 +14,13 @@ namespace ForthDemo_v1.PageObjects
     {
         protected readonly string baseHeaderCssSelector = "header.nav-locale-gb";
         protected IWebDriver drv;
+
         public Header(IWebDriver drv)
         {
             this.drv = drv;    
         }
 
         //child objects
-        public SearchBar SearchBar => (SearchBar)Activator.CreateInstance(typeof(SearchBar),drv, baseHeaderCssSelector);
+        public THeaderParts SearchBar => (THeaderParts)Activator.CreateInstance(typeof(THeaderParts),drv, baseHeaderCssSelector);
     }
 }

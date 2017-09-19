@@ -15,5 +15,6 @@ namespace ForthDemo_v1.BasePages
         where THeaderParts : HeaderPart
     {
         public Header<SearchBar> Header => (Header<SearchBar>)Activator.CreateInstance(typeof(Header<SearchBar>),drv);
+      //  public Header<HeaderPartForDelete> HeaderForDelete => (Header<HeaderPartForDelete>)Activator.CreateInstance(typeof(Header<HeaderPartForDelete>), drv);
     }
 }
