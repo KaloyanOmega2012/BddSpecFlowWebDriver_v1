@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace ForthDemo_v1.Interfaces
 {
-   public interface IClickable
+    public interface IDropDown
     {
-        string Text { get; }
-        void Click();
+        void SelectItemByName(string itemName);
+        
     }
 }

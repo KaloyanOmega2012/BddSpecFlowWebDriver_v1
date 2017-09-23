@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using ForthDemo_v1.Interfaces;
+using OpenQA.Selenium;
 
 namespace ForthDemo_v1.PageObjects.HeaderObject
 {
@@ -16,6 +17,6 @@ namespace ForthDemo_v1.PageObjects.HeaderObject
 
         public SearchBar SearchBar => new SearchBar(drv, baseHeaderSelector);
         public NavigationFlyoutSuggestions NavigationFlyoutSearch => new NavigationFlyoutSuggestions(drv, baseHeaderSelector);
-
+        
     }
 }

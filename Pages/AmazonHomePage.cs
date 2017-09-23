@@ -21,7 +21,5 @@ namespace ForthDemo_v1.Pages
 
         //objects
         public override string PageUrl => Settings.Default.BaseAddress;
-
-
     }
 }

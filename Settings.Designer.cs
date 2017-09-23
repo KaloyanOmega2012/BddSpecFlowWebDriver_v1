@@ -34,5 +34,17 @@ namespace ForthDemo_v1 {
                 this["BaseAddress"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("10")]
+        public int ShortWaitInSeconds {
+            get {
+                return ((int)(this["ShortWaitInSeconds"]));
+            }
+            set {
+                this["ShortWaitInSeconds"] = value;
+            }
+        }
     }
 }

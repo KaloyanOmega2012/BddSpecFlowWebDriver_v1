@@ -23,6 +23,6 @@ namespace ForthDemo_v1.PageObjects.HeaderObject
 
        public InputField InputField => new InputField(drv, fullCssSelector, "#twotabsearchtextbox");
        public IClickable SubmitSearchButton => new ClickableObject(drv, fullCssSelector, ".nav-search-submit");
-
+       public IDropDown SearchDropDown => new DropDown(drv,baseSearchBarCssSelector, "#searchDropdownBox");
     }
 }

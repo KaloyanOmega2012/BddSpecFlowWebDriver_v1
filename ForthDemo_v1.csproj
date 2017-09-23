@@ -63,15 +63,20 @@
     <Compile Include="Enums\Departments.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Interfaces\IClickable.cs" />
+    <Compile Include="Interfaces\IDropDown.cs" />
     <Compile Include="PageObjects\ClickableObjects\ClickableObject.cs" />
+    <Compile Include="PageObjects\DropDown.cs" />
     <Compile Include="PageObjects\HeaderObject\AmazonHeaderParts.cs" />
     <Compile Include="PageObjects\HeaderObject\Header.cs" />
     <Compile Include="PageObjects\HeaderObject\HeaderParts.cs" />
     <Compile Include="PageObjects\HeaderObject\NavigationFlyoutSuggestions.cs" />
     <Compile Include="PageObjects\HeaderObject\SearchBar.cs" />
     <Compile Include="PageObjects\InputField.cs" />
+    <Compile Include="PageObjects\SearchResultObject\ItemDetailRow.cs" />
+    <Compile Include="PageObjects\SearchResultObject\SearchResult.cs" />
     <Compile Include="Pages\AmazonHomePage.cs" />
     <Compile Include="BasePages\BasePage.cs" />
+    <Compile Include="Pages\AmazonBooksSearchResultsPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -101,7 +106,9 @@
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Helpers\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
