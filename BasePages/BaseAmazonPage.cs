@@ -9,12 +9,12 @@ using System.Threading.Tasks;
 
 namespace ForthDemo_v1.BasePages
 {
-    public abstract class BaseAmazonPage<TPage,THeader,THeaderParts>:BasePage<TPage>
+    public abstract class BaseAmazonPage<TPage, THeader, THeaderParts> : BasePage<TPage>
         where TPage : BasePage<TPage>
-        where THeader: Header<THeaderParts>
-        where THeaderParts : HeaderPart
+        where THeader : Header<THeaderParts>
+        where THeaderParts : HeaderParts
     {
-        public Header<SearchBar> Header => (Header<SearchBar>)Activator.CreateInstance(typeof(Header<SearchBar>),drv);
-      //  public Header<HeaderPartForDelete> HeaderForDelete => (Header<HeaderPartForDelete>)Activator.CreateInstance(typeof(Header<HeaderPartForDelete>), drv);
+        public Header<AmazonHeaderParts> Header => (Header<AmazonHeaderParts>)Activator.CreateInstance(typeof(Header<AmazonHeaderParts>), drv);
+
     }
 }

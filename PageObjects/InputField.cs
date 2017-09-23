@@ -10,13 +10,13 @@ namespace ForthDemo_v1.PageObjects
     public class InputField
     {
         private IWebDriver drv;
-        private readonly string cssSelector = "input";
+        private readonly string baseCssSelector = "input";
         private IWebElement element;
-        
-        public InputField(IWebDriver drv,string parentSelector)
+
+        public InputField(IWebDriver drv, string parentSelector, string elementSpecificLocator)
         {
             this.drv = drv;
-            string fullSelector = $"{parentSelector} {cssSelector}";
+            string fullSelector = $"{parentSelector} {baseCssSelector}{elementSpecificLocator}";
             element = drv.FindElement(By.CssSelector(fullSelector));
         }
 
@@ -24,7 +24,7 @@ namespace ForthDemo_v1.PageObjects
         {
             get
             {
-               return element.GetAttribute("value");
+                return element.GetAttribute("value");
             }
             set
             {
@@ -32,7 +32,6 @@ namespace ForthDemo_v1.PageObjects
                 element.SendKeys(value);
             }
         }
-
 
     }
 }

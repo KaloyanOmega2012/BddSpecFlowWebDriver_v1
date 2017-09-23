@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace ForthDemo_v1.Pages
 {
-    public class AmazonHomePage : BaseAmazonPage<AmazonHomePage,Header<SearchBar>,SearchBar>
+    public class AmazonHomePage : BaseAmazonPage<AmazonHomePage,Header<AmazonHeaderParts>, AmazonHeaderParts>
     {
         //ctor
         public AmazonHomePage(IWebDriver drv)

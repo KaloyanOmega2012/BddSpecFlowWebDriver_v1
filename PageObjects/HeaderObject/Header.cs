@@ -6,13 +6,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ForthDemo_v1.PageObjects
+namespace ForthDemo_v1.PageObjects.HeaderObject
 {
-    public abstract class Header<THeaderParts> 
-        where THeaderParts:HeaderPart
+    public class Header<THeaderParts> 
+        where THeaderParts:HeaderParts
 
     {
-        protected readonly string baseHeaderCssSelector = "header.nav-locale-gb";
+        protected readonly string baseHeaderCssSelector = "#navbar";
         protected IWebDriver drv;
 
         public Header(IWebDriver drv)
@@ -21,6 +21,6 @@ namespace ForthDemo_v1.PageObjects
         }
 
         //child objects
-        public THeaderParts SearchBar => (THeaderParts)Activator.CreateInstance(typeof(THeaderParts),drv, baseHeaderCssSelector);
+        public THeaderParts GetHeaderParts => (THeaderParts)Activator.CreateInstance(typeof(THeaderParts),drv, baseHeaderCssSelector);
     }
 }
