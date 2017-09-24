@@ -3,12 +3,7 @@ using ForthDemo_v1.Pages;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TechTalk.SpecFlow;
 
 namespace ForthDemo_v1
@@ -33,17 +28,20 @@ namespace ForthDemo_v1
     [Binding]
     class SelectItemSteps
     {
+        //ToDo make Bdd steps reusable with parameters for e.g. 
         private Context context;
         public SelectItemSteps()
         {
             this.context = new Context();
+            context.drv.Manage().Window.Maximize();
         }
 
         [Given(@"I am on amazon home page")]
         public void GivenIAmOnAmazonHomePage()
         {            
             context.amazonHomePage.NavigateTo();
-            Assert.IsTrue(context.amazonHomePage.IsAt(), "We are not on the AmazonHomePage");
+            var expectedPage = context.amazonHomePage.IsAt();
+            Assert.IsTrue(expectedPage, "We are not on the AmazonHomePage");
         }
 
         [Given(@"I have entered item name inside searchbar")]
@@ -64,27 +62,39 @@ namespace ForthDemo_v1
         [Then(@"then the item is found")]
         public void ThenThenTheItemIsFound()
         {
-            //Verify title of the searched item
-            Assert.AreEqual(context.itemName, context.amazonBooksSearchResultsPage.SearchResults.GetDetailRow(0).Title.Text);
+            var expectedItemName = context.itemName;
+            var actualItemName = context.amazonBooksSearchResultsPage.SearchResults.GetDetailRow(0).Title.Text;
+
+            Assert.AreEqual(expectedItemName,actualItemName);
         }
 
 
         [Then(@"it should be on first position inside items collection")]
         public void ThenItShouldBeOnFirstPositionInsideItemsCollection()
         {
-            Assert.AreEqual(0,context.amazonBooksSearchResultsPage.SearchResults.GetDetailRow(0).ItemPosition);
+            //we are using zero based index
+            var expectedItemPosition = 0;
+            var actualItemPosition = context.amazonBooksSearchResultsPage.SearchResults.GetDetailRow(0).ItemPosition;
+
+            Assert.AreEqual(expectedItemPosition,actualItemPosition);
         }
 
         [Then(@"It has a badge “Best Seller”")]
         public void ThenItHasABadgeBestSeller()
         {
-            Assert.AreEqual("Best Seller", context.amazonBooksSearchResultsPage.SearchResults.GetDetailRow(0).Badge.Text);
+            var expectedBadgeText = "Best Seller";
+            var actulaBadgeText = context.amazonBooksSearchResultsPage.SearchResults.GetDetailRow(0).Badge.Text;
+
+            Assert.AreEqual(expectedBadgeText,actulaBadgeText);
         }
 
         [Then(@"Selected type is Paperback")]
         public void ThenSelectedTypeIsPaperback()
         {
-            Assert.AreEqual("Paperback", context.amazonBooksSearchResultsPage.SearchResults.GetDetailRow(0).FirstSelectedType.Text);
+            var expectedFirstType = "Paperback";
+            var actualFirstType = context.amazonBooksSearchResultsPage.SearchResults.GetDetailRow(0).FirstSelectedType.Text;
+
+            Assert.AreEqual(expectedFirstType, actualFirstType);
         }
 
         [Then(@"And the price is (.*)")]

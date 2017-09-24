@@ -1,10 +1,9 @@
-﻿using ForthDemo_v1.Interfaces;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 
 namespace ForthDemo_v1.PageObjects.HeaderObject
 {
     //contains common for all pages header parts
-     public abstract class HeaderParts
+    public abstract class HeaderParts
     {
         protected IWebDriver drv;
         protected string baseHeaderSelector;

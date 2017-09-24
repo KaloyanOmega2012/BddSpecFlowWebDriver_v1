@@ -1,14 +1,10 @@
 ﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ForthDemo_v1.Pages
 {
-    //base page that hold high level common code for a webPage
+    //base page that hold high level common code for a webPage including the Browser related actions
+    //We can have IWebPage interface above this class but its skiped because of lack of time and need at the moment
     public abstract class BasePage<TPage>
         where TPage : BasePage<TPage>
     {

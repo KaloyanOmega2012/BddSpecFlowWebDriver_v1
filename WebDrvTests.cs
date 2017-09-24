@@ -1,15 +1,8 @@
-﻿using ForthDemo_v1.Enums;
-using ForthDemo_v1.PageObjects;
+﻿using ForthDemo_v1.PageObjects;
 using ForthDemo_v1.Pages;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 
 
 namespace ForthDemo_v1
