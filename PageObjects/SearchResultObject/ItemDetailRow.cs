@@ -25,6 +25,7 @@ namespace ForthDemo_v1.PageObjects.SearchResultObject
             this.rowIndex = rowIndex;
         }
 
+        public int ItemPosition => rowIndex;
         public IClickable Title => new ClickableObject(drv, baseSearchResultCssSelector, $"#result_{rowIndex} h2.s-access-title");
         public IClickable Badge => new ClickableObject(drv, baseSearchResultCssSelector, $"#result_{rowIndex} .a-badge-text");
         public IClickable FirstSelectedType => new ClickableObject(drv, baseSearchResultCssSelector, $"#result_{rowIndex} .a-column.a-span7 >div:nth-of-type(1)");
